@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    display: flex;
+    text-decoration: none;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: large;
+    color: rgb(44, 224, 224);
+    user-select: none;
+}
+
+.navbar li{
+    padding-left: 90px;
+    padding-top: 40px;
+    user-select: none;
+}
+
+
+.navbody{
+    background-color: black;
+    width: 1300px;
+    height: 80px;
+    display: flex;
+    user-select: none;
+}
+
+.navbody img{
+    width: 130px;
+    height: 130px;
+    border: 2px solid black;
+    border-radius: 90px;
+    margin-left: 40px;
+    margin-top: 10px;
+} 
+
+.content{
+    width: 1000px;
+    margin-left: 200px;
+   
+    
+}
+
+.content h1{
+    color: #2CBC85;
+    font-size: 90px;
+    padding-top: 98px;
+    padding-left: 125px;
+    font-family: 'Reggae One', cursive;
+    user-select: none;
+    position: relative;
+    animation: myMove 2s;
+}
+
+.content p{
+    color: white;
+    padding-top: 30px;
+    padding-left: 262px;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    user-select: none;
+    position: relative;
+    animation: myMovecontent 2s ;
+}
+
+.button a{
+background-color: #83b62c;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+  margin-left: 600px;
+  margin-top: -90px;
+  margin-bottom: 200px;
+}
+
+.level h1{
+    color: #ADFB00;
+    font-family: 'Acme', sans-serif;
+    font-size: 60px;
+    padding-left: 460px;
+    margin-bottom: 100px;
+    user-select: none;
+}
+
+.level-content a {
+    color: #54CD31;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 35px;
+    padding-left: 580px;
+    padding-bottom: 70px;
+    user-select: none;
+    
+}
+
+.about{
+    color: #7ea000;
+    margin-top: 80px;
+    width: 850px;
+    padding-left: 260px;
+    font-family: 'Merriweather Sans', sans-serif ;
+    font-size: 26px;
+    user-select: none;
+}
+
+.about-heading h1{
+    color: white;
+    margin-top: 90px;
+    margin-left: 600px;
+    font-size: 50px;
+    user-select: none;
+}
+
+.last img{
+    margin-top: 80px;
+    margin-left: 270px;
+}
+
+
+@keyframes myMove{
+    from {left:700px}
+    to{left: 0px;}
+}
+
+@keyframes myMovecontent {
+    from{ left: -700px;}
+    to {left: 0px;}
+}
+
+
