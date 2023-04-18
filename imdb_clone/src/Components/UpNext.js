@@ -16,9 +16,9 @@ const UpNext = ({ movies }) => {
                 Up next
             </Typography>
             {movies.splice(0, 3).map((movie) => (
-                <Box display={"flex"}>
+                <Box display={"flex"} padding={"4px"}>
                     <img
-                        height={"130vh"}
+                        height={"120vh"}
                         src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                         alt="poster"
                     />

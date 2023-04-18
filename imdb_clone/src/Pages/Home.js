@@ -7,6 +7,7 @@ import { NOWPLAYING_API_URL } from "../constants/constant";
 import Box from "@mui/material/Box";
 import Banner from "../Components/Banner";
 import UpNext from "../Components/UpNext";
+import Slide from "../Components/Slider";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -25,6 +26,13 @@ const Home = () => {
             <Box sx={{display:"flex", padding:"20px 0px 60px 60px", backgroundColor:"black"}}>
                 <Banner movies={movies} />
                 <UpNext movies={movies} />
+            </Box>
+            <Box sx={{backgroundColor:"black"}}>
+                <Slide movies={movies}  />
+                <Slide movies={movies}  />
+                <Slide movies={movies}  />
+                <Slide movies={movies}  />
+                <Slide movies={movies}  />
             </Box>
         </div>
     );

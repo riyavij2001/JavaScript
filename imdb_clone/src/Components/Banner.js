@@ -2,6 +2,7 @@ import { Box, styled, Typography } from "@mui/system";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { ImageListItem, ImageListItemBar } from "@mui/material";
 
 const responsive = {
     desktop: {
@@ -18,10 +19,9 @@ const responsive = {
     },
 };
 
-
 const Banner = ({ movies }) => {
     return (
-        <Box sx={{ width: "132vh"}}>
+        <Box sx={{ width: "130vh" }}>
             <Carousel
                 responsive={responsive}
                 swipeable={false}
@@ -33,13 +33,13 @@ const Banner = ({ movies }) => {
                 slidesToSlide={1}
             >
                 {movies.map((movie) => (
-                    <img
-                        height={"480vh"}
-                        width={"900px"}
-                        src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                        alt="banner"
-                    />
-                    
+                        <img
+                            height={"470vh"}
+                            width={"110%"}
+                            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                            alt="banner"
+                        />
+                        
                 ))}
             </Carousel>
         </Box>

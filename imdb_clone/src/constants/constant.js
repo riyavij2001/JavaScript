@@ -5,3 +5,10 @@ export const POPULAR_API_URL = 'https://api.themoviedb.org/3/movie/popular?api_k
 export const UPCOMING_API_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=e724dcdf0774ae16436403eb1b9b343a&language=en-US';
 export const TOPRATED_API_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=e724dcdf0774ae16436403eb1b9b343a&language=en-US';
 export const NOWPLAYING_API_URL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=e724dcdf0774ae16436403eb1b9b343a&language=en-US';
+
+
+export const moviesType ={
+    upcoming: 'Upcoming',
+    toprated: 'Top rated',
+    popular: 'Popular'
+}
