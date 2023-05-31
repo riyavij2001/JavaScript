@@ -27,7 +27,7 @@ const Home = () => {
                 <Banner movies={movies} />
                 <UpNext movies={movies} />
             </Box>
-            <Box sx={{backgroundColor:"black"}}>
+            <Box sx={{padding:"20px 60px 60px 60px",backgroundColor:"black"}}>
                 <Slide movies={movies}  />
                 <Slide movies={movies}  />
                 <Slide movies={movies}  />
