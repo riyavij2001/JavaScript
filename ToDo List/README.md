@@ -7,6 +7,7 @@ This is a simple to-do list application built using HTML, CSS, and JavaScript. I
 -   Add new tasks with due dates
 -   Mark tasks as completed
 -   Delete tasks
+-   Dark mode: Users can switch between light and dark modes for better readability.
 
 ## Getting Started
 
@@ -32,7 +33,6 @@ To add a new task, enter the task description and due date in the input fields a
 
 To delete a task, click the "Delete" button next to the task you want to remove. The task will be permanently removed from the list.
 
-
 ## Customization
 
 Feel free to customize the application according to your preferences. You can modify the styles in the `styles.css` file to change the appearance of the to-do list.
@@ -50,4 +50,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements
 
 This project was inspired by the simplicity and effectiveness of to-do list applications. Special thanks to the contributors of the open-source libraries used in this project.
-

@@ -1,182 +1,292 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-FhZrGUSMDewfEqw35Oh3vPRp2FEGnPl3IoQVjvlWmtZjZ7urI0dO7VnDzryi0D/2WNYSGsBS51CBvIR3n4j8jA=="
+            crossorigin="anonymous"
+        />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/project2.css">
+        <link rel="stylesheet" href="css/project2.css" />
+        <style>
+            /* Dark mode styles */
+            body.dark-mode {
+                background-color: black;
+                color: white;
+            }
+            body.dark-mode table.table {
+                background-color: white;
+            }
+        </style>
+        <title>To-Do List</title>
+    </head>
 
-  <title>To-Do List</title>
-</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">To-Do List</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Items
+                            </a>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Another action</a
+                                    >
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button class="btn btn-outline-success" type="submit">
+                            Search
+                        </button>
+                    </form>
+                    <div style="padding-left: 20px">
+                      <button style="border-radius: 20px;" class="btn btn-light" id="darkModeBtn" onclick="toggleDarkMode()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                        </svg>
+                        Dark Mode
+                      </button>
+                      
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-<body>
+        <div class="container my-4">
+            <h2 class="text-center">To-do List</h2>
 
+            <div class="mb-3">
+                <label for="title">Title</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    aria-describedby="emailHelp"
+                />
+            </div>
+            <div class="mb-3">
+                <label for="description">Description</label>
+                <textarea
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                ></textarea>
+            </div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">To-Do List</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Items
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1">Contact</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+            <button type="submit" class="btn btn-primary" id="add">
+                Add to List
+            </button>
+            <button class="btn btn-primary" onclick="clearStorage()">
+                Clear List
+            </button>
 
-  <div class="container my-4">
-    <h2 class="text-center">To-do List</h2>
+            <div id="items" class="my-4">
+                <h2>Your Items</h2>
 
-    <div class="mb-3">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-      <label for="description">Description</label>
-      <textarea class="form-control" id="description" rows="3"></textarea>
-    </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.no.</th>
+                            <th scope="col">Item Title</th>
+                            <th scope="col">Item Description</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Coffee</td>
+                            <td>Nescafe</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <button type="submit" class="btn btn-primary" id="add">Add to List</button>
-    <button class="btn btn-primary" onclick="clearStorage()">Clear List</button>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"
+        ></script>
 
-
-    <div id="items" class="my-4">
-      <h2>Your Items</h2>
-
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">S.no.</th>
-            <th scope="col">Item Title</th>
-            <th scope="col">Item Description</th>
-            <th scope="col">Actions</th>
-
-          </tr>
-        </thead>
-        <tbody id="tablebody">
-          <tr>
-            <th scope="row">1</th>
-            <td>Coffee</td>
-            <td> Nescafe</td>
-            <td><button class="btn btn-sm btn-primary">Delete</button></td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
-  <script>
-    function getAndupdate() {
-      console.log("updating list---");
-      tit = document.getElementById('title').value;
-      desc = document.getElementById('description').value;
-      if (localStorage.getItem('itemsJson') == null) {
-        itemJsonArray = [];
-        itemJsonArray.push([tit, desc]);
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-      }
-      else {
-        itemJsonArrayStr = localStorage.getItem('itemsJson')
-        itemJsonArray = JSON.parse(itemJsonArrayStr);
-        itemJsonArray.push([tit, desc]);
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-      }
-      update();
-    }
+        <script>
+            if (localStorage.getItem("darkMode") === "true") {
+                enableDarkMode();
+            }
 
-    function update() {
-      if (localStorage.getItem('itemsJson') == null) {
-        itemJsonArray = [];
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-      }
-      else {
-        itemJsonArrayStr = localStorage.getItem('itemsJson')
-        itemJsonArray = JSON.parse(itemJsonArrayStr);
+            function toggleDarkMode() {
+                const body = document.body;
+                const table = document.querySelector("table.table");
 
-      }
+                // Toggle dark mode class on body element
+                body.classList.toggle("dark-mode");
 
-      // Populate the Table
-      let tablebody = document.getElementById("tablebody");
-      let str = "";
-      itemJsonArray.forEach((element, index) => {
-        str += `
+                // Toggle dark mode class on table element
+                table.classList.toggle("dark-mode");
+
+                // Save dark mode preference to local storage
+                const isDarkMode = body.classList.contains("dark-mode");
+                localStorage.setItem("darkMode", isDarkMode);
+            }
+
+            function getAndupdate() {
+                console.log("updating list---");
+                tit = document.getElementById("title").value;
+                desc = document.getElementById("description").value;
+                if (localStorage.getItem("itemsJson") == null) {
+                    itemJsonArray = [];
+                    itemJsonArray.push([tit, desc]);
+                    localStorage.setItem(
+                        "itemsJson",
+                        JSON.stringify(itemJsonArray)
+                    );
+                } else {
+                    itemJsonArrayStr = localStorage.getItem("itemsJson");
+                    itemJsonArray = JSON.parse(itemJsonArrayStr);
+                    itemJsonArray.push([tit, desc]);
+                    localStorage.setItem(
+                        "itemsJson",
+                        JSON.stringify(itemJsonArray)
+                    );
+                }
+                update();
+            }
+
+            function update() {
+                if (localStorage.getItem("itemsJson") == null) {
+                    itemJsonArray = [];
+                    localStorage.setItem(
+                        "itemsJson",
+                        JSON.stringify(itemJsonArray)
+                    );
+                } else {
+                    itemJsonArrayStr = localStorage.getItem("itemsJson");
+                    itemJsonArray = JSON.parse(itemJsonArrayStr);
+                }
+
+                // Populate the Table
+                let tablebody = document.getElementById("tablebody");
+                let str = "";
+                itemJsonArray.forEach((element, index) => {
+                    str += `
               <tr>
               <th scope="row">${index + 1}</th>
               <td>${element[0]}</td>
               <td>${element[1]}</td>
               <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td>
               </tr>`;
-      });
-      tablebody.innerHTML = str;
-    }
-    add = document.getElementById("add");
-    add.addEventListener("click", getAndupdate);
-    update();
-    function deleted(itemIndex) {
-      console.log("Deleted", itemIndex);
-      itemJsonArrayStr = localStorage.getItem('itemsJson')
-      itemJsonArray = JSON.parse(itemJsonArrayStr);
-      //delete item index element from the array
-      itemJsonArray.splice(itemIndex, 1);
-      localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-      update();
-    }
-    function clearStorage() {
-      if (confirm("Do you really want to clear the whole list?")) {
-        console.log('Clearing the storage')
-        localStorage.clear();
-        update()
-      }
-
-    }
-  </script>
-</body>
-
+                });
+                tablebody.innerHTML = str;
+            }
+            add = document.getElementById("add");
+            add.addEventListener("click", getAndupdate);
+            update();
+            function deleted(itemIndex) {
+                console.log("Deleted", itemIndex);
+                itemJsonArrayStr = localStorage.getItem("itemsJson");
+                itemJsonArray = JSON.parse(itemJsonArrayStr);
+                //delete item index element from the array
+                itemJsonArray.splice(itemIndex, 1);
+                localStorage.setItem(
+                    "itemsJson",
+                    JSON.stringify(itemJsonArray)
+                );
+                update();
+            }
+            function clearStorage() {
+                if (confirm("Do you really want to clear the whole list?")) {
+                    console.log("Clearing the storage");
+                    localStorage.clear();
+                    update();
+                }
+            }
+        </script>
+    </body>
 </html>
