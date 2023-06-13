@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SJF Preemptive</title>
+<script src="sjfPreemptive.js" async defer></script>
+<style>
+.button {
+  background-color: #162D5D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.userinput{
+  text-transform: title;
+  color: #162D5D;
+  font-size:120%;
+  text-shadow:5px;
+ 
+}
+
+body{
+  background-color: white;
+}
+
+
+</style>
+</head>
+
+<body style="background-color: #162D5D; width: 160vh; margin-left: -40px">
+  <div style="margin-left: 65vh; margin-top: 5vh; background-color: white; padding: 30px; border-radius: 20px;" class="class">
+    Enter Arrival Time : <input type="text" placeholder="Ex.:0,1,2,3,4,5" id="arrival_time" required/><br/><br/>
+    Enter Burst Time : <input type="text" placeholder="Ex.:0,1,2,3,4,5" id="burst_time" required/><br/><br/>
+    <button type="button" class="button"  onclick="calculate()">Generate Output</button>
+    <br/><br/>
+    <div id="table"></div>
+    <br/><br/>
+    <canvas id="myCanvas" width="400" height="300" style="border:1px solid #000000;"></canvas>
+  </div>
+</body>
+</html>
